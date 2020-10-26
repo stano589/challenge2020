@@ -1,5 +1,6 @@
 # challenge2020
 coding challenge
+RapidJSON library is not included and is necessary for the last task.
 
 # Contents:
 # Task 1: Own implementation of std::lock_guard
