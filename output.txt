@@ -1,0 +1,173 @@
+COMMAND DISPATCHER: STARTED
+CommandDispatcher: addCommandHandler: help
+CommandDispatcher: addCommandHandler: exit
+CommandDispatcher: addCommandHandler: exp
+CommandDispatcher: addCommandHandler: fib
+CommandDispatcher: addCommandHandler: fac
+TEST: Dispatching Command 
+ {
+  "command":"help",
+  "payload": {
+    "usage":"Enter json command in 'command':'<command>','payload': { // json payload of arguments }",
+  }
+ }
+
+COMMAND: 
+ {
+  "command":"help",
+  "payload": {
+    "usage":"Enter json command in 'command':'<command>','payload': { // json payload of arguments }",
+  }
+ }
+
+dispatchCommand error: JSON Parse Error.
+TEST: Dispatching Command 
+ {
+  "command":"exp",
+  "payload": {
+     "ops": [2, 10]
+  }
+ }
+
+COMMAND: 
+ {
+  "command":"exp",
+  "payload": {
+     "ops": [2, 10]
+  }
+ }
+
+Command is: exp
+Payload is: {"ops":[2,10]}
+Controller::exp: command: 
+Result of func exp: 1024
+TEST: Dispatching Command 
+ {
+  "command":"fib",
+  "payload": {
+     "n": 9
+  }
+ }
+
+COMMAND: 
+ {
+  "command":"fib",
+  "payload": {
+     "n": 9
+  }
+ }
+
+Command is: fib
+Payload is: {"n":9}
+Controller::fibbonaci: command: 
+Result of func fib: 9-th value is: 55
+TEST: Dispatching Command 
+ {
+  "command":"fac",
+  "payload": {
+     "n": 8
+  }
+ }
+
+COMMAND: 
+ {
+  "command":"fac",
+  "payload": {
+     "n": 8
+  }
+ }
+
+Command is: fac
+Payload is: {"n":8}
+Controller::factorial: command: 
+Result of func factorial: n! = 40320
+TEST: Dispatching Command 
+ {
+  "command":"random",
+  "payload": {
+     "n": 8
+  }
+ }
+
+COMMAND: 
+ {
+  "command":"random",
+  "payload": {
+     "n": 8
+  }
+ }
+
+Command is: random
+Payload is: {"n":8}
+dispatchCommand error: handler for command: random not found.
+
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"help", "payload": { "usage":"Enter json command in 'command':'<command>','payload'"} }
+Command is: help
+Payload is: {"usage":"Enter json command in 'command':'<command>','payload'"}
+Controller::help: command: Enter json command in 'command':'<command>','payload'
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"fac", "payload": { "n": 8 } }
+Command is: fac
+Payload is: {"n":8}
+Controller::factorial: command: 
+Result of func factorial: n! = 40320
+
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"fib", "payload": { "n": 8 } }
+Command is: fib
+Payload is: {"n":8}
+Controller::fibbonaci: command: 
+Result of func fib: 8-th value is: 34
+
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"exp", "payload": { "ops": [2,6] } }
+Command is: exp
+Payload is: {"ops":[2,6]}
+Controller::exp: command: 
+Result of func exp: 64
+
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"exp", "payload": { "ops": [3,4] } }
+Command is: exp
+Payload is: {"ops":[3,4]}
+Controller::exp: command: 
+Result of func exp: 81
+
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"fac", "payload": { "n": 5 } }
+Command is: fac
+Payload is: {"n":5}
+Controller::factorial: command: 
+Result of func factorial: n! = 120
+
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"exp", "payload": { "ops": [10,4] } }
+Command is: exp
+Payload is: {"ops":[10,4]}
+Controller::exp: command: 
+Result of func exp: 10000
+
+
+
+COMMANDS: {"command":"exit", "payload":{"reason":"User requested exit."}}
+	enter command : COMMAND: { "command":"exit","payload": { "reason":"Exiting program on user request." } }
+Command is: exit
+Payload is: {"reason":"Exiting program on user request."}
+Controller::exit: command: 
+Exiting program on user request.
+COMMAND DISPATCHER: ENDED

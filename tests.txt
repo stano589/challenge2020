@@ -1,0 +1,8 @@
+{ "command":"help", "payload": { "usage":"Enter json command in 'command':'<command>','payload'"} }
+{ "command":"fac", "payload": { "n": 8 } }
+{ "command":"fib", "payload": { "n": 8 } }
+{ "command":"exp", "payload": { "ops": [2,6] } }
+{ "command":"exp", "payload": { "ops": [3,4] } }
+{ "command":"fac", "payload": { "n": 5 } }
+{ "command":"exp", "payload": { "ops": [10,4] } }
+{ "command":"exit","payload": { "reason":"Exiting program on user request." } }
